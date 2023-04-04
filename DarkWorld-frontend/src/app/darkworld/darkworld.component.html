@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" >Home</a>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-success"  >Add Users</button>
+        </li>
+
+        <li class="nav-item">
+          <button type="button" class="btn btn-info" routerLink="/add"
+       >Show users</button>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div >
+  <table class="table table-sm">
+    <thead>
+        <tr><th>UserId</th><th>UserName</th><th>emailId</th><th>UserAge</th><th colspan="2">option</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td colspan="2"></td>
+        <td>{{user.userId}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.emailId}}</td>
+        <td>{{user.userAge}}</td>
+        <td><button type="button" class="btn btn-info">Show users</button></td>
+        <td><button type="button" class="btn btn-info" routerLink="/details"
+          routerLinkActive="active">Show userDetails</button></td>
+    </tr>
+      </tbody>
+      </table>
+</div>
